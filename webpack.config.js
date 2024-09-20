@@ -1,7 +1,7 @@
-const { StylableWebpackPlugin } = require("@stylable/webpack-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
+const {StylableWebpackPlugin} = require('@stylable/webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {VueLoaderPlugin} = require('vue-loader')
+const webpack = require('webpack')
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -9,11 +9,11 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: 'vue-loader',
       },
       {
         test: /\.svg$/,
-        type: 'asset'
+        type: 'asset',
       },
     ],
   },
@@ -22,11 +22,11 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: "true",
-      __VUE_PROD_DEVTOOLS__: "false",
+      __VUE_OPTIONS_API__: 'true',
+      __VUE_PROD_DEVTOOLS__: 'false',
     }),
   ],
   devServer: {
     port: 9000,
   },
-};
+}

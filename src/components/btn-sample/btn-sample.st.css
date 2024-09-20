@@ -1,9 +1,16 @@
 .root {
-    -st-states: size(enum(large, medium, small));
+    -st-states:
+        size(enum(large, medium, small)),
+        black(boolean);
     background: pink;
 }
 
 .root:size(large) {
     padding: 1rem 2rem;
     font-size: 1.5rem;
+}
+
+.root:black {
+    background-color: black;
+    color: darkcyan;
 }

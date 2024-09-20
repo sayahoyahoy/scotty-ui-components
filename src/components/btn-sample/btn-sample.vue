@@ -1,16 +1,16 @@
+<script setup>
+import {classes, st} from './btn-sample.st.css'
+
+defineProps({
+    size: String,
+    black: Boolean,
+})
+</script>
+
 <template>
-    <button :class="st(classes.root, {size})">
+    <button :class="st(classes.root, { size, black })">
         <span :class="classes.label">
-            <slot></slot>
+            <slot />
         </span>
     </button>
 </template>
-
-<script setup>
-import {classes, st} from "./btn-sample.st.css"
-
-defineProps({
-    size: String
-})
-
-</script>

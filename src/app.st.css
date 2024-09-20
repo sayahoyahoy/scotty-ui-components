@@ -3,4 +3,9 @@
     padding: 2rem;
     font-family: sans-serif;
     background: darkslateblue;
+    color: black;
+}
+
+:global(a) {
+    color: inherit;
 }

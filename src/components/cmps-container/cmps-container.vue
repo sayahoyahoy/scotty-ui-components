@@ -8,6 +8,9 @@ defineProps({
 
 <template>
     <div :class="classes.root">
+        <RouterLink to="/">
+            Back
+        </RouterLink>
         <h1 :class="classes.label">
             {{ label }}
         </h1>

@@ -5,8 +5,12 @@
     row-gap: 1rem;
 }
 
-.root h1 {
+.root > h1 {
     font-size: 1.4rem;
     color: white;
     font-weight: 400;
+}
+
+.root > a {
+    color: cadetblue;
 }

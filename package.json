@@ -1,23 +1,27 @@
 {
-  "name": "scotty-ui-components",
+  "name": "stylable-vue-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "BSD-3-Clause",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "webpack serve --mode development --open"
   },
   "dependencies": {
-    "@stylable/rollup-plugin": "^6.1.1",
+    "@stylable/runtime": "^5.17.0",
     "pug": "^3.0.3",
-    "stylus": "^0.63.0",
-    "vue": "^3.4.37"
+    "vue": "^3.4.7"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.2",
-    "typescript": "^5.5.3",
-    "vite": "^5.4.1",
-    "vue-tsc": "^2.0.29"
+    "@stylable/core": "^5.17.0",
+    "@stylable/webpack-plugin": "^5.17.0",
+    "@vue/compiler-sfc": "^3.4.7",
+    "css-loader": "^6.9.0",
+    "gh-pages": "^6.1.1",
+    "html-webpack-plugin": "^5.6.0",
+    "vue-loader": "^17.4.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

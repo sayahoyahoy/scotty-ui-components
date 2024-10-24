@@ -1,10 +1,14 @@
 <script setup>
 import {ref} from 'vue'
-import DropdownMenu from '../components/dropdowm-menu/dropdown-menu.vue'
+import Btn from '../components/btn-sample/btn-sample.vue'
+import Container from '../components/cmps-container/cmps-container.vue'
+import ContextMenu from '../components/context-menu/context-menu.vue'
+import DropdownMenu from '../components/dropdown-menu/dropdown-menu.vue'
 
 const menuItems = [
     {
         label: 'New Tab',
+        action: () => console.log('New Tab'),
     },
     {
         label: 'More Tools',
@@ -33,6 +37,7 @@ const menuItems = [
     },
     {
         label: 'New Window',
+        shortcut: 'Ctrl+N',
     },
     {
         label: 'Show Bookmarks',
@@ -53,18 +58,31 @@ const menuItems = [
 ]
 
 const model = ref({})
+const model2 = ref({})
 </script>
 
 <template>
     <container label="Test">
-        <dropdown-menu v-model="model" :items="menuItems">
+        <dropdown-menu v-model="model" :items="menuItems" @action="console.log">
             <template #trigger>
-                <button>Open Dropdown</button>
+                <btn>Open Dropdown</btn>
             </template>
             <!-- <template #item="{ item }">
                 ahoy {{ item.label }} s
             </template> -->
         </dropdown-menu>
         <pre>{{ model }}</pre>
+
+        <context-menu v-model="model2" :items="menuItems" @action="console.log">
+            <template #trigger>
+                <btn variant="secondary">
+                    context menu right click
+                </btn>
+            </template>
+            <!-- <template #item="{ item }">
+                ahoy {{ item.label }} s
+            </template> -->
+        </context-menu>
+        <pre>{{ model2 }}</pre>
     </container>
 </template>

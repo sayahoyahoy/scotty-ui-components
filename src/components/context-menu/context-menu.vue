@@ -1,14 +1,14 @@
 <script setup>
 import {
-    DropdownMenuArrow,
-    DropdownMenuContent,
-    DropdownMenuPortal,
-    DropdownMenuRoot,
-    DropdownMenuTrigger,
+    ContextMenuArrow,
+    ContextMenuContent,
+    ContextMenuPortal,
+    ContextMenuRoot,
+    ContextMenuTrigger,
 } from 'radix-vue'
 import {defineProps, provide, reactive, watch} from 'vue'
-import {classes, st} from './dropdown-menu.st.css'
-import DropdownMenuItems from './dropdown-menu-items.vue'
+import {classes, st} from './context-menu.st.css'
+import ContextMenuItems from './context-menu-items.vue'
 
 const props = defineProps({
     items: {
@@ -59,13 +59,22 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    withArrow: {
+        type: Boolean,
+        default: false,
+    },
 })
 
-const emits = defineEmits(['update:modelValue'])
+const emits = defineEmits(['action', 'update:modelValue'])
 
 const values = reactive({...props.modelValue})
 
 provide('values', values)
+provide('selectItem', selectItem)
+
+function selectItem(item) {
+    emits('action', item)
+}
 
 watch(
     () => props.modelValue,
@@ -115,31 +124,34 @@ function processItems(items) {
 </script>
 
 <template>
-    <dropdown-menu-root :class="st(classes.root)" :modal="props.modal">
-        <dropdown-menu-trigger :class="st(classes.trigger)" as-child>
-            <slot name="trigger" :open="open" />
-        </dropdown-menu-trigger>
+    <div>
+        <context-menu-root :modal="props.modal">
+            <context-menu-trigger :class="st(classes.root, classes.trigger)" as-child>
+                <slot name="trigger" />
+            </context-menu-trigger>
 
-        <dropdown-menu-portal>
-            <dropdown-menu-content
-                :class="st(classes.content, {}, classes.root)"
-                :align="props.align"
-                :side="props.side"
-                :side-offset="props.sideOffset"
-                :align-offset="props.alignOffset"
-                :avoid-collisions="props.avoidCollisions"
-                :collision-padding="props.collisionPadding"
-                :arrow-padding="props.arrowPadding"
-                :sticky="props.sticky"
-                :hide-when-detached="props.hideWhenDetached"
-            >
-                <dropdown-menu-items :items="props.items">
-                    <template #item="{ item }">
-                        <slot name="item" :item="item" />
-                    </template>
-                </dropdown-menu-items>
-                <dropdown-menu-arrow :class="classes.arrow" />
-            </dropdown-menu-content>
-        </dropdown-menu-portal>
-    </dropdown-menu-root>
+            <context-menu-portal>
+                <context-menu-content
+                    :class="st(classes.root, classes.content, {})"
+                    :align="props.align"
+                    :side="props.side"
+                    :side-offset="props.sideOffset"
+                    :align-offset="props.alignOffset"
+                    :avoid-collisions="props.avoidCollisions"
+                    :collision-padding="props.collisionPadding"
+                    :arrow-padding="props.arrowPadding"
+                    :sticky="props.sticky"
+                    :hide-when-detached="props.hideWhenDetached"
+                >
+                    <context-menu-items :items="props.items">
+                        <template #item="{ item }">
+                            <slot name="item" :item="item" />
+                        </template>
+                    </context-menu-items>
+
+                    <context-menu-arrow v-if="props.withArrow" :class="classes.arrow" />
+                </context-menu-content>
+            </context-menu-portal>
+        </context-menu-root>
+    </div>
 </template>

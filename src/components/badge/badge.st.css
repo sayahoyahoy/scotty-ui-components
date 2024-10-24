@@ -1,0 +1,65 @@
+.root {
+    -st-states: variant(enum(default, secondary, destructive, outline));
+
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--border-radius-md);
+    border: var(--border-width) solid;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-semibold);
+    transition: var(--transition-colors);
+    outline: none;
+
+    padding-top: .125rem;
+    padding-bottom: .125rem;
+    padding-left: .625rem;
+    padding-right: .625rem;
+
+    line-height: 1rem;
+
+    --border-radius-md: 0.375rem;
+    --border-width: 1px;
+
+    --font-size-xs: 0.75rem;
+    --font-semibold: 600;
+    --transition-colors: color 0.2s, background-color 0.2s;
+
+    --focus-ring: var(--focus-ring-ring);
+    --focus-ring-offset: var(--focus-ring-offset-2);
+
+    --bg-primary: #3490dc;
+    --text-primary-foreground: #ffffff;
+    --bg-destructive: #e3342f;
+    --text-destructive-foreground: #ffffff;
+    --border-input: #d3dce6;
+    --bg-background: #ffffff;
+    --bg-accent: #f3f4f6;
+    --text-accent-foreground: #1f2937;
+    --bg-secondary: #6c757d;
+    --text-secondary-foreground: #ffffff;
+    --text-primary: #3490dc;
+}
+
+.root:variant(default) {
+    --border-color: transparent;
+    background-color: var(--bg-primary);
+    color: var(--text-primary-foreground);
+    box-shadow: var(--shadow);
+}
+
+.root:variant(secondary) {
+    --border-color: transparent;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary-foreground);
+}
+
+.root:variant(destructive) {
+    --border-color: transparent;
+    background-color: var(--bg-destructive);
+    color: var(--text-destructive-foreground);
+    box-shadow: var(--shadow);
+}
+
+.root:variant(outline) {
+    color: var(--text-foreground);
+}

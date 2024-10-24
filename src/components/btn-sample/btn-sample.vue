@@ -3,14 +3,12 @@ import {classes, st} from './btn-sample.st.css'
 
 defineProps({
     size: String,
-    black: Boolean,
+    variant: Boolean,
 })
 </script>
 
 <template>
-    <button :class="st(classes.root, { size, black })">
-        <span :class="classes.label">
-            <slot />
-        </span>
+    <button :class="st(classes.root, { size: size ?? 'default', variant: variant ?? 'default' })">
+        <slot />
     </button>
 </template>

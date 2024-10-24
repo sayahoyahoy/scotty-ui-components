@@ -14,7 +14,7 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.1",
+    "@antfu/eslint-config": "^3.8.0",
     "@stylable/core": "^6.1.1",
     "@stylable/webpack-plugin": "^6.1.1",
     "@vue/compiler-sfc": "^3.5.7",

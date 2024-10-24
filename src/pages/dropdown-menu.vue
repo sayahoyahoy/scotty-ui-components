@@ -1,4 +1,5 @@
 <script setup>
+import {ref} from 'vue'
 import DropdownMenu from '../components/dropdowm-menu/dropdown-menu.vue'
 
 const menuItems = [
@@ -17,6 +18,12 @@ const menuItems = [
                     {label: 'Save Page As…'},
                     {label: 'Create Shortcut…'},
                     {label: 'Name Window…'},
+                    {
+                        label: 'Show Bookmarks',
+                        type: 'checkbox',
+                        name: 'aaa',
+                        checked: true,
+                    },
                 ]
             },
         ]
@@ -30,25 +37,34 @@ const menuItems = [
     {
         label: 'Show Bookmarks',
         type: 'checkbox',
+        name: 'showBookmarks',
         checked: true,
     },
     {
         label: 'People',
         type: 'radio',
+        name: 'person',
+        value: 'colm',
         options: [
             {label: 'Pedro Duarte', value: 'pedro'},
-            {label: 'Colm Tuite', value: 'colm', checked: true},
+            {label: 'Colm Tuite', value: 'colm'},
         ]
     }
 ]
+
+const model = ref({})
 </script>
 
 <template>
     <container label="Test">
-        <dropdown-menu :items="menuItems">
-            <template #item="{ item }">
-                ahoy {{ item.label }} s
+        <dropdown-menu v-model="model" :items="menuItems">
+            <template #trigger>
+                <button>Open Dropdown</button>
             </template>
+            <!-- <template #item="{ item }">
+                ahoy {{ item.label }} s
+            </template> -->
         </dropdown-menu>
+        <pre>{{ model }}</pre>
     </container>
 </template>

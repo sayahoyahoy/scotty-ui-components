@@ -2,6 +2,7 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu({
   vue: true,
+  typescript: true,
 }, {
   rules: {
     'style/array-bracket-newline': ['error', 'consistent'],
@@ -45,6 +46,14 @@ export default antfu({
     'jsonc/indent': ['error', 2],
 
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
-    'vue/multi-word-component-names': ['error']
+    'vue/multi-word-component-names': ['error'],
+    'vue/max-attributes-per-line': ['error', {
+      singleline: {
+        max: 3,
+      },
+      multiline: {
+        max: 1,
+      },
+    }],
   },
 })

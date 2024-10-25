@@ -42,7 +42,7 @@ const inputModel = ref('')
         </btn>
         <hr>
 
-        <btn size="icon">
+        <btn variant="outline" size="icon">
             ☀️
         </btn>
 

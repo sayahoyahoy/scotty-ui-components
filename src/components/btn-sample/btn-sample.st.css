@@ -40,6 +40,7 @@
     underline,
     underline-offset-4,
     whitespace-nowrap,
+    w-9,
 ] from "../tailwind.st.css";
 
 .root {
@@ -59,11 +60,16 @@
 }
 
 .root:focus-visible {
-    -st-mixin: outline-none ring-1 ring-ring;
+    -st-mixin: 
+        outline-none
+        ring-1
+        ring-ring;
 }
 
 .root:disabled {
-    -st-mixin: pointer-events-none opacity-50;
+    -st-mixin:
+        pointer-events-none
+        opacity-50;
 }
 
 .root svg {
@@ -127,7 +133,9 @@
 }
 
 .root:variant(link) {
-    -st-mixin: text-primary underline-offset-4;
+    -st-mixin:
+        text-primary
+        underline-offset-4;
 }
 
 .root:variant(link):hover {
@@ -152,4 +160,8 @@
         h-10
         rounded-md
         px-8;
+}
+
+.root:size(icon) {
+    -st-mixin: h-9 w-9;
 }

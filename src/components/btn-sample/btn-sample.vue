@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <button :class="st(classes.root, { size: size ?? 'default', variant: variant ?? 'default' })">
+    <button :class="st(classes.root, { size: size || 'default', variant: variant || 'default' })">
         <slot />
     </button>
 </template>

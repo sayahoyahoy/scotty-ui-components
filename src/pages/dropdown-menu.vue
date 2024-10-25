@@ -65,7 +65,9 @@ const model2 = ref({})
     <container label="Test">
         <dropdown-menu v-model="model" :items="menuItems" @action="console.log">
             <template #trigger>
-                <btn>Open Dropdown</btn>
+                <btn variant="outline">
+                    Open Dropdown
+                </btn>
             </template>
             <!-- <template #item="{ item }">
                 ahoy {{ item.label }} s

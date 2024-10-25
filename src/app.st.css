@@ -1,11 +1,7 @@
-@st-import Vars from "./components/vars.st.css";
+@st-import [theme-orange, theme-orange-dark, vars] from './components/tailwind.st.css';
 
 :global(body) {
-    margin: 0;
-    padding: 2rem;
     font-family: sans-serif;
-    background: white;
-    color: black;
 }
 
 :global(a) {
@@ -13,5 +9,5 @@
 }
 
 :global(body) {
-    -st-mixin: Vars;
+    -st-mixin: vars theme-orange theme-orange-dark;
 }

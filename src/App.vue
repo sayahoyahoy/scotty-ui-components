@@ -4,7 +4,7 @@ import {classes as tailwind} from './components/tailwind.st.css'
 </script>
 
 <template>
-    <div :class="st(classes.app, tailwind.vars, tailwind.light)">
+    <div :class="st(classes.app)">
         <router-view />
     </div>
 </template>

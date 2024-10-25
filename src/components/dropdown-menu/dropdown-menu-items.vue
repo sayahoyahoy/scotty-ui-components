@@ -54,7 +54,7 @@ export default {
             v-model:checked="values[item.name || item.label]"
             :class="st(classes.checkboxItem)"
         >
-            <span :class="classes.checkboxItemIndicator">
+            <span :class="classes.itemIndicator">
                 <dropdown-menu-item-indicator>
                     <slot name="checkbox-item-indicator" :item="item">
                         ☑️
@@ -78,7 +78,7 @@ export default {
                 :value="option.value"
                 :class="st(classes.radioItem)"
             >
-                <span :class="classes.checkboxItemIndicator">
+                <span :class="classes.itemIndicator">
                     <dropdown-menu-item-indicator>
                         <slot name="radio-item-indicator" :item="option">
                             🔘

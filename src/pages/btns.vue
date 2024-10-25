@@ -46,6 +46,10 @@ const inputModel = ref('')
             ☀️
         </btn>
 
+        <btn variant="default" disabled>
+            Default
+        </btn>
+
         <hr>
 
         <badge variant="default">

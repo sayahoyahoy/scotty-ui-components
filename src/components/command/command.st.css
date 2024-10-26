@@ -1,0 +1,226 @@
+@st-import [
+    flex,
+    h-full,
+    w-full,
+    flex-col,
+    overflow-hidden,
+    rounded-md,
+    bg-popover,
+    text-popover-foreground,
+
+    h-10,
+    bg-transparent,
+    py-3,
+    text-sm,
+    outline-none,
+
+    items-center,
+    border-b,
+    px-3,
+    py-6,
+    text-center,
+
+    overflow-y-auto,
+    overflow-x-hidden,
+
+    p-1,
+    text-foreground,
+    px-2,
+    py-1\.5,
+    text-xs,
+    font-medium,
+    text-muted-foreground,
+
+    relative,
+    flex,
+    cursor-default,
+    select-none,
+    items-center,
+    rounded-sm,
+
+    bg-accent,
+    text-accent-foreground,
+
+    pointer-events-none,
+    opacity-50,
+
+    z-50,
+    w-72,
+    rounded-md,
+    border,
+    bg-popover,
+    p-4,
+    text-popover-foreground,
+    shadow-md,
+    outline-none,
+
+    fade-in-0,
+    zoom-in-95,
+    animate-in,
+    
+    fade-out-0,
+    zoom-out-95,
+    animate-out,
+    
+    slide-in-from-top-2,
+    slide-in-from-right-2,
+    slide-in-from-left-2,
+    slide-in-from-bottom-2,
+
+    justify-start,
+    justify-between,
+
+] from "../tailwind.st.css";
+
+.root {
+
+}
+
+.combo {
+    -st-mixin:
+        flex
+        h-full
+        w-full
+        flex-col
+        overflow-hidden
+        rounded-md
+        bg-popover
+        text-popover-foreground
+        ;
+}
+
+.input {
+    -st-mixin:
+        flex
+        h-10
+        w-full
+        rounded-md
+        bg-transparent
+        py-3
+        text-sm
+        outline-none
+        ;
+
+        /* placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 */
+}
+
+.inputWrapper {
+    -st-mixin:
+        flex
+        items-center
+        border-b
+        px-3
+        ;
+}
+
+.empty {
+    -st-mixin:
+        py-6
+        text-center
+        text-sm
+        ;
+}
+
+.list {
+    -st-mixin:
+        overflow-y-auto
+        overflow-x-hidden
+        ;
+    
+    max-height: 300px;
+}
+
+.group {
+    -st-mixin:
+        overflow-hidden
+        p-1
+        text-foreground
+        px-2
+        py-1\.5
+        text-xs
+        font-medium
+        text-muted-foreground
+        ;
+}
+
+.groupLabel {
+    -st-mixin:
+        px-2
+        py-1\.5
+        text-xs
+        font-medium
+        text-muted-foreground
+        ;
+}
+
+.item {
+    -st-mixin:
+        relative
+        flex
+        cursor-default
+        select-none
+        items-center
+        rounded-sm
+        px-2
+        py-1\.5
+        text-sm
+        outline-none
+        justify-between
+        ;
+}
+
+.item[data-highlighted] {
+    -st-mixin:
+        bg-accent
+        text-accent-foreground
+        ;
+}
+
+.item[data-disabled] {
+    -st-mixin:
+        pointer-events-none
+        opacity-50
+        ;
+}
+
+.trigger {
+    -st-mixin:
+        justify-start
+    ;
+    width: 300px;
+}
+
+.content {
+    -st-mixin:
+        z-50
+        rounded-md
+        border
+        bg-popover
+        text-popover-foreground
+        shadow-md
+        outline-none
+
+        fade-in-0
+        zoom-in-95
+        animate-in
+        
+        fade-out-0
+        zoom-out-95
+        animate-out
+        
+        slide-in-from-top-2
+        slide-in-from-right-2
+        slide-in-from-left-2
+        slide-in-from-bottom-2
+        ;
+    
+    width: var(--radix-popper-anchor-width);
+}
+
+.indicator {
+
+}
+
+:root {
+    @property st-global(--radix-popper-anchor-width)
+}

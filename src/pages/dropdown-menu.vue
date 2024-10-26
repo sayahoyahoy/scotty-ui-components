@@ -1,7 +1,8 @@
 <script setup>
 import {ref} from 'vue'
-import Btn from '../components/btn-sample/btn-sample.vue'
+import Btn from '../components/button/button.vue'
 import Container from '../components/cmps-container/cmps-container.vue'
+import Combobox from '../components/command/command.vue'
 import ContextMenu from '../components/context-menu/context-menu.vue'
 import DropdownMenu from '../components/dropdown-menu/dropdown-menu.vue'
 
@@ -57,8 +58,18 @@ const menuItems = [
     }
 ]
 
+const frameworks = [
+    {value: 'next.js', label: 'Next.js'},
+    {value: 'sveltekit', label: 'SvelteKit'},
+    {value: 'nuxt', label: 'Nuxt'},
+    {value: 'remix', label: 'Remix'},
+    {value: 'astro', label: 'Astro'},
+]
+
 const model = ref({})
 const model2 = ref({})
+const model3 = ref({})
+const model4 = ref({})
 </script>
 
 <template>
@@ -86,5 +97,12 @@ const model2 = ref({})
             </template> -->
         </context-menu>
         <pre>{{ model2 }}</pre>
+
+        <pre>{{ model4 }}</pre>
+
+        <combobox v-model="model3" :items="frameworks" @update:selected-value="console.log" />
+
+        <div>xy</div>
+        <pre>{{ model3 }}</pre>
     </container>
 </template>

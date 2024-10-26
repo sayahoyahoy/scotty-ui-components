@@ -1,4 +1,4 @@
-@st-import [theme-orange, theme-orange-dark, vars] from './components/tailwind.st.css';
+@st-import [theme-zinc, theme-zinc-dark, vars] from './components/tailwind.st.css';
 
 :global(body) {
     font-family: sans-serif;
@@ -9,5 +9,5 @@
 }
 
 :global(body) {
-    -st-mixin: vars theme-orange theme-orange-dark;
+    -st-mixin: vars theme-zinc theme-zinc-dark;
 }

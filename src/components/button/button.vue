@@ -1,9 +1,9 @@
 <script setup>
-import {classes, st} from './btn-sample.st.css'
+import {classes, st} from './button.st.css'
 
 defineProps({
     size: String,
-    variant: Boolean,
+    variant: String,
 })
 </script>
 

@@ -1,5 +1,5 @@
 <script setup>
-import BtnSample from '../components/btn-sample/btn-sample.vue'
+import BtnSample from '../components/button/button.vue'
 import Container from '../components/cmps-container/cmps-container.vue'
 import SwitchSample from '../components/switch-sample/switch-sample.vue'
 </script>

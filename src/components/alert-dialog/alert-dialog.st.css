@@ -1,0 +1,136 @@
+@st-import [
+    --tw-bg-opacity,
+    -translate-x-1\/2,
+    -translate-y-1\/2,
+    slide-out-to-top-1\/2,
+    --tw-enter-translate-y,
+    animate-in,
+    animate-out,
+    bg-background,
+    bg-black,
+    border,
+    duration-200,
+    duration-200,
+    fade-in-0,
+    fade-out-0,
+    fixed,
+    flex,
+    flex-col,
+    gap-4,
+    grid,
+    inset-0,
+    left-1\/2,
+    max-w-lg,
+    p-6,
+    p-6,
+    shadow-lg,
+    slide-in-from-left-1\/2,
+    slide-out-to-left-1\/2,
+    space-y-2,
+    text-center,
+    top-1\/2,
+    w-full,
+    z-50,
+    z-50,
+    zoom-in-95,
+    zoom-out-95,
+    flex-col-reverse,
+    text-lg,
+    font-semibold,
+    text-sm,
+    text-muted-foreground,
+    mt-2,
+    sm\/rounded-lg,
+    sm\/text-left,
+    sm\/flex-row,
+    sm\/justify-end,
+    sm\/space-x-2,
+    sm\/mt-0,
+] from "../tailwind.st.css";
+
+.root {
+}
+
+.content {
+    -st-mixin:
+        fixed
+        left-1\/2
+        top-1\/2
+        z-50
+        grid
+        w-full
+        max-w-lg
+        -translate-x-1\/2
+        -translate-y-1\/2
+        gap-4
+        border
+        bg-background
+        p-6
+        shadow-lg
+        duration-200
+        sm\/rounded-lg
+        
+        fade-in-0
+        zoom-in-95
+        slide-in-from-left-1\/2
+        animate-in
+
+        fade-out-0
+        zoom-out-95
+        slide-out-to-left-1\/2
+        slide-out-to-top-1\/2
+        animate-out
+        ;
+
+}
+
+.content[data-state=open] {
+    --tw-enter-translate-y: -48%;
+}
+
+.trigger {
+}
+
+.overlay {
+    -st-mixin:
+        fixed
+        inset-0
+        z-50
+        bg-black
+        
+        fade-in-0
+        animate-in
+
+        fade-out-0
+        animate-out
+        ;
+    
+    --tw-bg-opacity: .8;
+}
+
+.header {
+    -st-mixin: flex flex-col space-y-2 text-center sm\/text-left;
+}
+
+.title {
+    -st-mixin: text-lg font-semibold;
+}
+
+.description {
+    -st-mixin: text-sm text-muted-foreground;
+}
+
+.footer {
+    -st-mixin:
+        flex
+        flex-col-reverse
+        sm\/flex-row
+        sm\/justify-end
+        sm\/space-x-2;
+}
+
+.cancel {
+    -st-mixin: mt-2 sm\/mt-0;
+}
+
+.action {}

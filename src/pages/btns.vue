@@ -1,12 +1,17 @@
 <script setup>
 import {ref} from 'vue'
+import AlertDialog from '../components/alert-dialog/alert-dialog.vue'
 import Badge from '../components/badge/badge.vue'
-import Btn from '../components/btn-sample/btn-sample.vue'
+import Btn from '../components/button/button.vue'
 import Container from '../components/cmps-container/cmps-container.vue'
 
 import MyInput from '../components/input/input.vue'
 
 const inputModel = ref('')
+
+function alertMe(msg) {
+  alert(msg)
+}
 </script>
 
 <template>
@@ -69,5 +74,33 @@ const inputModel = ref('')
 
         <my-input v-model="inputModel" placeholder="ahoy" />
         <my-input v-model="inputModel" placeholder="hey" />
+
+        <alert-dialog action="Ok" @action="() => alertMe('k')">
+            <template #trigger>
+                <btn variant="outline">
+                    Open Dialog
+                </btn>
+            </template>
+            <template #title>
+                Are you absolutely sure?
+            </template>
+            <template #body>
+                This action cannot be undone. This will <strong>permanently</strong> delete your account and remove your data from our servers.
+            </template>
+        </alert-dialog>
+
+        <alert-dialog
+            action="Yes"
+            cancel=""
+            title="Surely?"
+            body="of course"
+            @action="() => alertMe('k')"
+        >
+            <template #trigger>
+                <btn variant="outline">
+                    Open Dialog
+                </btn>
+            </template>
+        </alert-dialog>
     </container>
 </template>
